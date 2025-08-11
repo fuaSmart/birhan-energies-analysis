@@ -1,0 +1,90 @@
+.App {
+  text-align: center;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background-color: #f4f7f6;
+  min-height: 100vh;
+}
+
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
+  color: white;
+}
+
+/* NEW: Flexbox container for the side-by-side layout */
+.dashboard-content {
+  display: flex;
+  flex-direction: row; /* This is the default, but it's good to be explicit */
+  padding: 20px;
+  gap: 20px; /* This creates a nice space between the chart and the report */
+}
+
+/* NEW: Define the size of the chart area */
+.chart-wrapper {
+  flex: 3; /* This makes the chart take up 3 "parts" of the available space */
+  min-width: 0; /* Important fix for flexbox and chart resizing */
+}
+
+/* NEW: Define the size of the report area */
+.report-wrapper {
+  flex: 2; /* This makes the report take up 2 "parts" */
+  text-align: left;
+}
+
+.report-wrapper h2 {
+  text-align: center;
+  color: #282c34;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+
+.event-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.event-card h3 {
+  color: #c23b22; /* A reddish color to match the lines */
+  margin-top: 0;
+}
+
+.event-card p {
+  line-height: 1.6;
+  color: #333;
+}
+
+.custom-tooltip {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.custom-tooltip .label {
+  font-weight: bold;
+  margin: 0;
+}
+
+.custom-tooltip .price {
+  color: #8884d8;
+  margin: 5px 0 0;
+}
+
+.custom-tooltip .type {
+  color: #555;
+  margin: 5px 0 0;
+  font-style: italic;
+}
+
+/* NEW: Media Query for Responsive Design */
+/* When the screen is 1024px wide or less, these styles will apply */
+@media (max-width: 1024px) {
+  .dashboard-content {
+    flex-direction: column; /* Stack the items vertically */
+  }
+}
